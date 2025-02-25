@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  # current_user used here to identify who made the changes into current record,
+  # and set from the controller
   attr_accessor :current_user
 
   belongs_to :user
@@ -14,6 +16,8 @@ class Project < ApplicationRecord
 
   private
 
+  # Logs a status update as a comment, associating it with the current user.
+  # Captures the previous and new status, along with a message detailing the change.
   def audit_status
     comment = comments.build(
       user: current_user || user,

@@ -45,3 +45,10 @@ To run the test suite:
 ```sh
 rspec
 ```
+
+## Enhancement Points
+1. Maintain a change history for all project fields.
+2. Use Hotwire to enable real-time conversations and status updates.
+3. Allow editing and deletion of comments, with notifications for each action.
+4. Implement user-wise authorization to control permissions.
+5. Enforce validation rules for project state transitions.
