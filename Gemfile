@@ -51,18 +51,26 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "pry"
+  gem "faker"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "pry"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  # Testing tool
+  gem "rspec-rails"
+  gem "simplecov"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
+  gem "database_cleaner-active_record"
+  gem "rails-controller-testing"
 end
 
 # Auth
@@ -70,5 +78,6 @@ gem "devise"
 
 # View Related Gems
 gem "tailwindcss-rails"
-gem "view_component"
 gem "slim"
+gem 'will_paginate', '~> 4.0'
+# gem "view_component"

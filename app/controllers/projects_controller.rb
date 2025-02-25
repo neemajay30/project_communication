@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[edit update show destroy]
 
   def index
-    @projects = Project.all
+    @projects = Project.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
   end
 
   def new
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to project_path(@project), notice: "Project updated successfully!"
     else
-      render :new
+      render :edit
     end
   end
 

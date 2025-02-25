@@ -1,4 +1,59 @@
 @import "tailwindcss";
-.test{
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+}
 
+.pagination a, 
+.pagination .current, 
+.pagination .previous_page, 
+.pagination .next_page {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pagination a {
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.pagination a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .current {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+.pagination .previous_page, 
+.pagination .next_page {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+  cursor: not-allowed;
+}
+
+.pagination a.next_page, 
+.pagination a.previous_page {
+  color: #007bff;
+  border: 1px solid #007bff;
+  cursor: pointer;
+}
+
+.pagination a.next_page:hover, 
+.pagination a.previous_page:hover {
+  background-color: #007bff;
+  color: #fff;
 }

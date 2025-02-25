@@ -5,7 +5,7 @@
         | Create Account
 
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f|
-      = render "devise/shared/error_messages", resource: resource, class: "text-red-600 text-sm mb-4"
+      = render "devise/shared/error_messages", resource: resource
 
       .relative
         = f.label :email, class: "text-sm font-medium text-gray-700 mb-2 block"

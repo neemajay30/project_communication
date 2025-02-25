@@ -13,4 +13,9 @@ module ApplicationHelper
     end
     "#{base_classes} #{color_classes}"
   end
+
+
+  def my_comment?(comment)
+    comment.user_id == current_user.id
+  end
 end

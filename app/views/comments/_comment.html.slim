@@ -2,12 +2,13 @@
   .text-sm.text-gray-500.mb-2.flex.justify-between
     b = "#{comment.user.email} "
     | #{time_ago_in_words(comment.created_at)} ago
-  - if comment.properties.present?
+  - if comment.status?
     p.span.bg-white.p-3.5.rounded-lg.text-gray-700.text-sm.font-semibold = comment.content
   - else
     .flex.justify-between
       .text-section
         p.text-gray-600 = comment.content
-      .actions
-        = button_to project_comment_path(project_id: comment.project.id, id: comment.id), method: :delete, class: "cursor-pointer text-red-600 hover:text-red-800 font-medium transition duration-200" do
-          | Delete
+      - if my_comment?(comment)
+        .actions
+          = button_to project_comment_path(project_id: comment.project.id, id: comment.id), method: :delete, class: "cursor-pointer text-red-600 hover:text-red-800 font-medium transition duration-200" do
+            | Delete
