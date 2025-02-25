@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :porjects
+  get "welcome/index"
+  root "welcome#index"
+  devise_for :users
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

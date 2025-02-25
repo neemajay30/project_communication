@@ -1,0 +1,13 @@
+header.bg-white.shadow-md.sticky.top-0.z-50
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.justify-between.items-center.py-4
+      .flex.items-center
+        a href="/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text"
+          | PCH
+      nav.flex.items-center.space-x-8
+        .flex.items-center.space-x-4
+          - if user_signed_in?
+            = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition duration-300 font-medium"
+          - else
+            = link_to "Sign In", new_user_session_path, class: "text-gray-600 hover:text-blue-600 transition duration-200 font-medium"
+            = link_to "Sign Up", new_user_registration_path, class: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition duration-300 font-medium"

@@ -1,0 +1,9 @@
+.flex-grow.flex.items-center.justify-center
+  .max-w-4xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .bg-white.shadow-xl.rounded-2xl.p-8.text-center.transform.transition-all.hover:shadow-2xl
+      h1.text-4xl.font-extrabold.text-gray-800.mb-4
+        span.bg-gradient-to-r.from-blue-600.to-indigo-600.text-transparent.bg-clip-text
+          | Welcome, #{current_user&.email&.split('@')&.first || 'User'}!
+
+      .mt-8
+        = link_to "Add Product", '#', class: "inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-300 transition duration-300 shadow-md hover:shadow-lg"
