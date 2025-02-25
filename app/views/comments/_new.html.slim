@@ -1,0 +1,6 @@
+div id="comment-form-section"
+  = form_with model: [project, Comment.new], class: "space-y-4 mb-8" do |form|
+    .space-y-2
+      = form.text_area :content, rows: 3, class: ["w-full p-3 border rounded-lg bg-gray-50 placeholder-gray-400 transition duration-200", form.object.errors[:body].any? ? "border-red-400 focus:ring-2 focus:ring-red-500 focus:border-red-500" : "border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"], placeholder: "Write your comment here..."
+    .flex.justify-end
+      = form.submit "Post Comment", class: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-300 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"

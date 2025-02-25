@@ -1,0 +1,27 @@
+.flex-grow.flex.items-center.justify-center.py-8
+  .max-w-4xl.mx-auto.px-4.sm:px-6.lg:px-8.w-full.max-w-
+    .bg-white.shadow-xl.rounded-2xl.p-8.transform.transition-all.hover:shadow-2xl
+      - if notice.present?
+        p.bg-green-50.text-green-600.py-2.px-4.mb-6.rounded-lg.inline-block.font-medium#notice
+          = notice
+
+      .text-3xl.font-extrabold.text-gray-800.mb-6.justify-between.flex
+        h1.bg-gradient-to-r.from-blue-600.to-indigo-600.text-transparent.bg-clip-text
+          = @project.name
+        span class=status_badge(@project.status)
+          = @project.status.humanize
+      .space-y-4.mb-8
+        strong.text-gray-700.font-medium Description:
+        p.text-gray-600 = @project.description
+
+      .flex.justify-end.space-x-4.mb-8
+        = link_to "Edit", edit_project_path(@project), class: "inline-block bg-gray-100 text-gray-700 px-3.5 py-2.5 rounded-lg font-medium hover:bg-gray-50 transition duration-200 shadow-sm hover:shadow-md"
+        = button_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" }, class: "inline-block bg-red-600 text-white px-3.5 py-2.5 rounded-lg font-medium hover:bg-red-700 transition duration-200 shadow-sm hover:shadow-md cursor-pointer"
+
+      h2.text-2xl.font-semibold.text-gray-800.mb-4
+        | Add Comment
+      = render "comments/new", project: @project
+
+
+      h2.text-2xl.font-semibold.text-gray-800.mb-4 Conversation History
+      = render "comments/index", project: @project

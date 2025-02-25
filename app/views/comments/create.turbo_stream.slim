@@ -1,0 +1,4 @@
+= turbo_stream.replace "comment-form-section" do
+  = render "comments/new", project: @project
+= turbo_stream.prepend "project-#{@project.created_at.to_i}-comments" do
+  = render "comments/comment", comment: @comment

@@ -1,0 +1,6 @@
+- if project.comments.any?
+  .space-y-4 id="project-#{project.created_at.to_i}-comments"
+    - project.comments.recent.each do |comment|
+      = render "comments/comment", comment: comment
+- else
+  p.text-gray-600 No comments yet. Be the first to add one!
